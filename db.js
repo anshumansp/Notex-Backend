@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const password = process.env.MONGO_PASS;
 
-const mongoURI = "mongodb+srv://anshumansp:" + encodeURIComponent(process.env.MONGO_PASS) + "@cluster0.ezqihij.mongodb.net/notex?retryWrites=true&w=majority";
+const mongoURI = "mongodb+srv://anshumansp:" + encodeURIComponent(password) + "@cluster0.ezqihij.mongodb.net/notex?retryWrites=true&w=majority";
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI, {
